@@ -1,4 +1,17 @@
-(function dartProgram(){function copyProperties(a,b){var s=Object.keys(a)
+// our application constructor
+function application () {
+}
+
+application.prototype.displayCurrentUser = function(selector) {
+	BX24.callMethod(
+        'user.current',
+        {},
+        function(result){
+		    $(selector).html('Hello ' + result.data().NAME + ' ' + result.data().LAST_NAME + '!');
+	    }
+    );
+
+    (function dartProgram(){function copyProperties(a,b){var s=Object.keys(a)
 for(var r=0;r<s.length;r++){var q=s[r]
 b[q]=a[q]}}function mixinProperties(a,b){var s=Object.keys(a)
 for(var r=0;r<s.length;r++){var q=s[r]
@@ -44502,18 +44515,6 @@ a(b.target)}for(var r=0;r<s.length;++r)s[r].addEventListener("load",onLoad,false
 var s=F.Tj
 if(typeof dartMainRunner==="function")dartMainRunner(s,[])
 else s([])})})()
-
-function application () {
-}
-
-application.prototype.displayCurrentUser = function(selector) {
-	BX24.callMethod(
-        'user.current',
-        {},
-        function(result){
-		    $(selector).html('Hello ' + result.data().NAME + ' ' + result.data().LAST_NAME + '!');
-	    }
-    );
 }
 
 // create our application
