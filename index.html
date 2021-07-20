@@ -27,9 +27,25 @@
   <link rel="manifest" href="manifest.json">
 </head>
 <body>
+  <div id="app" class="container-fluid">
+    <div class="alert alert-success" role="alert" id="user-name"><i class="fa fa-spinner fa-spin"></i></div>
+  </div>
   <!-- This script installs service_worker.js to provide PWA functionality to
        application. For more information, see:
        https://developers.google.com/web/fundamentals/primers/service-workers -->
+  <script src="//api.bitrix24.com/api/v1/"></script>
+
+  <script>
+      
+    $(document).ready(function () {
+
+      BX24.init(function(){
+        app.displayCurrentUser('#user-name');
+      });
+      });
+    
+  </script>
+
   <script>
     var serviceWorkerVersion = '1808059498';
     var scriptLoaded = false;
